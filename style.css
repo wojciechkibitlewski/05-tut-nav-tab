@@ -23,29 +23,44 @@ h3 {
 .tabs {
     display: flex;
     list-style: none;
-
-}
-.tabs-list {
-    display: block;
-    padding: 10px 40px;
-    margin-bottom: -1px;
-}
-.tabs-list.active {
-    border: 1px solid #ccc;
-    border-bottom: 1px solid #fff;
+    background-color: #eee;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+.tabs-list {
+    
+}
+.tabs-list.active {
+    
+}
 
 .tabs-link {
+    display: block;
+    padding: 10px 40px;
+    margin-bottom: -1px;
+    cursor: pointer;
     text-decoration: none;
     color: #333;
     font-weight: 700;
     text-transform: uppercase;
 }
+.tabs-link.active {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #fff;
+    /* animation: fadeIn 0.3s; */
+}
+
+
 .tabs-body {
     padding: 20px;
     border: 1px solid #ccc;
+    animation: fadeIn 0.5s;
+}
+.tabs-body.hidden {
+    display: none;
 }
 .tabs-body ul {
     margin-left: 20px;
@@ -54,8 +69,19 @@ h3 {
     display: block;
 }
 
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 @media only screen and (max-width: 576px) {
-    .tabs-list {
+    .tabs-link {
         padding: 10px 10px;
+        text-align: center;
+        
     }
 }
